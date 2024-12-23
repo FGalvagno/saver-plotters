@@ -85,18 +85,7 @@ fig.update_layout(
     ),
     yaxis=dict(
         title=dict(
-            text="yaxis title",
-            font=dict(
-                color="#1f77b4"
-            )
-        ),
-        tickfont=dict(
-            color="#1f77b4"
-        )
-    ),
-    yaxis2=dict(
-        title=dict(
-            text="yaxis2 title",
+            text="Temperatura [°C]",
             font=dict(
                 color="#ff7f0e"
             )
@@ -104,24 +93,40 @@ fig.update_layout(
         tickfont=dict(
             color="#ff7f0e"
         ),
-        anchor="free",
-        overlaying="y",
-        side="right",
-        position=0.99
+                showgrid = False
+
     ),
-    yaxis3=dict(
+    yaxis2=dict(
         title=dict(
-            text="yaxis3 title",
+            text="Humedad Relativa [%]",
             font=dict(
-                color="#d62728"
+                color="#1f77b4"
             )
         ),
         tickfont=dict(
-            color="#d62728"
+            color="#1f77b4"
+        ),
+        anchor="free",
+        overlaying="y",
+        side="right",
+        position=0.99,
+        showgrid = False
+
+    ),
+    yaxis3=dict(
+        title=dict(
+            text="Presión Absoluta [hPa]",
+            font=dict(
+                color="#bcbd22"
+            )
+        ),
+        tickfont=dict(
+            color="#bcbd22"
         ),
         anchor="x",
         overlaying="y",
-        side="right"
+        side="right",
+        showgrid = False
     )
 )
 
@@ -162,10 +167,6 @@ fig.add_trace(go.Indicator(
     row=4, col=4)
 
 
-
-#fig.add_trace(go.Barpolar(theta = [df['WindDirectionAct'].iloc[-1]], r= [df['WindSpeedAct'].iloc[-1]], width = 3),
-#              row=2, col=1)
-
-              
-fig.update_layout(title_text="AWS " + config.get("location") + ":" + df['TIMESTAMP'].iloc[-1] + " UTC-3")
+       
+fig.update_layout(title_text="AWS " + config.get("location") + ": " + df['TIMESTAMP'].iloc[-1] + " UTC-3")
 fig.show()
