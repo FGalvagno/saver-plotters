@@ -1,0 +1,4 @@
+#____FILE PATHS_____
+rad_file:   #path of main RAD file 
+aws_file: "/home/facundog/Documents/COR_AWS.dat"     #path of main AWS file
+location: "COR"
