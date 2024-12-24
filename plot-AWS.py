@@ -169,4 +169,5 @@ fig.add_trace(go.Indicator(
 
        
 fig.update_layout(title_text="AWS " + config.get("location") + ": " + df['TIMESTAMP'].iloc[-1] + " UTC-3")
+fig.write_html("AWS.html")
 fig.show()
